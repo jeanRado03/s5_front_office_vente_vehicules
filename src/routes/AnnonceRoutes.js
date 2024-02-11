@@ -4,6 +4,7 @@ import { lazy } from 'react';
 import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
 import LandingLayout from '../layout/landingLayout';
+import {Navigate} from "react-router-dom";
 
 // chat routing
 const AnnonceRouting = Loadable(lazy(() => import('views/annonce/Annonce')));
@@ -29,11 +30,11 @@ const AnnonceRoutes = {
     },
     {
       path: '/favorisAnnonce',
-      element: <FAvori />
+      element: isAuthenticated?<FAvori />:<Navigate to="/annonce" replace={true} />
     },
     {
       path: '/achatVehicule',
-      element: <Achat />
+      element: isAuthenticated?<Achat />:<Navigate to="/login" replace={true} />
     }
   ]
 };

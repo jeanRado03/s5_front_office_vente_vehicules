@@ -39,7 +39,9 @@ const navigate=useNavigate()
       <Box sx={{ flexGrow: 1 }} />
 
       {/* notification & profile */}
-        <Button variant="text"   color="dark" style={
+        <Button variant="text"   color="dark"
+                onClick={()=>navigate("/recherche")}
+                style={
             {
                 // color:theme.palette.grey["500"],
                 margin:"auto 1.5% ",
@@ -48,7 +50,9 @@ const navigate=useNavigate()
                 letterSpacing:'1px'
             }
         }>filtres</Button>
-        <Button variant="text" color="dark" style=
+        <Button variant="text" color="dark"
+                onClick={()=>navigate("/annonce")}
+                style=
             {
                 {
                     margin:"auto 1.5% ",
