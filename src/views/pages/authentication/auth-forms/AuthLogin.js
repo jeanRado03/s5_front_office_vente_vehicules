@@ -80,7 +80,6 @@ const FirebaseLogin = ({ ...others }) => {
           </Grid>
           <Grid item xs={12} container alignItems="center" justifyContent="center"></Grid>
         </Grid>
-
         <Formik
             initialValues={{
               email: 'mytyrealy2@gmail.com',
@@ -139,7 +138,7 @@ const FirebaseLogin = ({ ...others }) => {
                       name="email"
                       onBlur={handleBlur}
                       onChange={handleChange}
-                      label="Email"
+                      label="Email Address / Username"
                       inputProps={{}}
                   />
                   {touched.email && errors.email && (
@@ -150,12 +149,12 @@ const FirebaseLogin = ({ ...others }) => {
                 </FormControl>
 
                 <FormControl fullWidth error={Boolean(touched.password && errors.password)} sx={{ ...theme.typography.customInput }}>
-                  <InputLabel htmlFor="outlined-adornment-password-login">mot de passe</InputLabel>
+                  <InputLabel htmlFor="outlined-adornment-password-login">Mot de passe</InputLabel>
                   <OutlinedInput
                       id="outlined-adornment-password-login"
                       type={showPassword ? 'text' : 'password'}
                       value={values.password}
-                      name="mot de passe"
+                      name="password"
                       onBlur={handleBlur}
                       onChange={handleChange}
                       endAdornment={
@@ -200,7 +199,7 @@ const FirebaseLogin = ({ ...others }) => {
                 <Box sx={{ mt: 2 }}>
                   <AnimateButton>
                     <Button disableElevation disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained" color="secondary">
-                      se connecter
+                      Sign in
                     </Button>
                   </AnimateButton>
                 </Box>
